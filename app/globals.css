@@ -18,6 +18,7 @@
     --foreground: #ededed;
   }
 }
+/* 在你的全局CSS文件，例如 comm.css */
 
 body {
   background: var(--background);

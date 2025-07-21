@@ -1,0 +1,14 @@
+/* Custom CSS for hiding scrollbars */
+
+.custom-scrollbar {
+    /* 对于 Webkit 浏览器（Chrome, Safari, Edge） */
+    &::-webkit-scrollbar {
+      display: none; /* 隐藏滚动条 */
+    }
+  
+    /* 对于 Firefox */
+    scrollbar-width: none; /* 隐藏滚动条 */
+  
+    /* 对于 IE 和 Edge (旧版) */
+    -ms-overflow-style: none;
+  }
