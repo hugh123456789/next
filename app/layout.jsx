@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { NavBar } from "./NavBar";
 import { RiUserReceived2Line } from "react-icons/ri";
 import {
   ClerkProvider,
@@ -11,6 +10,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import Footer from "./Foot";
+import {NavBar} from "./NavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,34 +31,33 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-        >
-          <div className="bg-[#14151b]">
-            {/* <NavBar /> */}
-
-            <div className="flex justify-end p-4  hover:shadow-[#1351fc] text-2xl transform transition-transform duration-300 ease-in-out ">
-              <SignedOut>
-              {/* <SignInButton /> */}
-              <SignUpButton>
-                <RiUserReceived2Line className=" shadow-[#1351fc]"> 
-                  login
-                </RiUserReceived2Line>
-              </SignUpButton>
-            </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning={true}>
+          <div className="bg-[url('/grid-black.svg')] bg-repeat min-h-screen ">
+            <div className=" fixed">
+              <div className="fixed top-4 right-4 z-50 text-3xl text-[#003877]">
+                <SignedOut>
+                  <SignUpButton>
+                    <RiUserReceived2Line style={{color:'black'}}>
+                      login
+                    </RiUserReceived2Line>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+              </div>
             </div>
-
-            <div className="custom-scrollbar">
-              {children}
+            
+            <div className="custom-scrollbar flex  justify-center items-center flex-col" style={{width:'90vw',margin:'0 auto'}}>
+             
+             {children}
+              
             </div>
-
-
-
+            <div className='pt-4 bg-white w-[80vw] ' style={{margin:'0 auto'}}>
+              <hr style={{marginBottom:'3vh'}}/>
+              <Footer style={{ marginTop: '9vh' }}/>
+            </div>
           </div>
-
         </body>
       </html>
     </ClerkProvider>

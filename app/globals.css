@@ -21,7 +21,40 @@
 /* 在你的全局CSS文件，例如 comm.css */
 
 body {
-  background: var(--background);
+  background: transparent; /* 改为透明，让div的背景图片显示 */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.foot{
+  color: hsla(0, 0%, 0%, 0.8);
+  margin-left: 10px;
+
+}
+.foot:hover{
+  color: rgb(51, 226, 51);
+}
+.foot-contain{
+  margin-right: 20px;
+}
+.button{
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: rgb(23, 23, 23);
+  width: 55px;
+  height: 42px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.button:hover{
+  background-color: rgb(53, 53, 53);
+}
+
+
+input{
+  border-radius: 10px;
+  border:royalblue 3px solid;
+  color: #0a0a0a;
+  font-size: medium;
+  padding: 0 0 0 10px;
 }
