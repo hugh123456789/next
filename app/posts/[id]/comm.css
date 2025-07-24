@@ -214,3 +214,24 @@
 .post-sidebar::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
+
+.back-button{
+  position: fixed;
+  top: 40px;
+  left: 30px;
+  color: #007bff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  border: 2px solid #949494;
+  border-radius:15px;
+  transition: all 0.3s ease;
+}
+.back-button:hover{
+  background-color: #e3f2fd;
+  box-shadow: 0 0 10px 3px rgba(59, 130, 246, 0.5);
+}

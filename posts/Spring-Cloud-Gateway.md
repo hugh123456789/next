@@ -2,7 +2,7 @@
 title: 'SpringCloud'
 description: ''
 date: 2025-07-19 10:00:00
-
+image: './image/3.jpg'
 ---
 # **Spring-Cloud-Gateway**
 

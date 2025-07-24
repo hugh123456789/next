@@ -22,7 +22,7 @@ export const NavBar = () => {
 
     console.log(path)
     return (
-        <div className="flex justify-center bg-white mt-[5vh] ">
+        <div className="flex justify-center bg-white nav-bar">
             <nav
                 className={classNames(
                     'border-2 rounded-2xl h-[8vh] items-center flex justify-around  w-2/5',
@@ -36,7 +36,7 @@ export const NavBar = () => {
                         { 'scale-110': path === item.href },
                         { 'bg-[#0095ff]': path === item.href },
                         { 'text-white': path === item.href },
-                        { ' text-black transform transition-all duration-300 ease-in-out rounded-xl p-1  font-bold hover:text-2xl hover:text-[#0095ff]': true }
+                        { ' text-black transform transition-all duration-300 ease-in-out rounded-xl p-1  font-bold hover:text-2xl hover:text-[royalblue]': true }
                     )} href={item.href} key={item.href}>{item.title}</Link>
                 ))}
 

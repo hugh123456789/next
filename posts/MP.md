@@ -2,7 +2,7 @@
 title: 'mp'
 description: ''
 date: 2025-07-19 10:00:00
-
+image: './image/6.jpg'
 ---
 
 # 微信小程序（https://developers.weixin.qq.com/miniprogram/dev/framework/）

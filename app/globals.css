@@ -18,30 +18,73 @@
     --foreground: #ededed;
   }
 }
-/* 在你的全局CSS文件，例如 comm.css */
+
+/* 全局隐藏滚动条样式 */
+/* 对于 Webkit 浏览器 (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* 对于 Firefox */
+html {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  
+}
+
+/* 确保所有元素都隐藏滚动条 */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
 
 body {
   background: transparent; /* 改为透明，让div的背景图片显示 */
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  /* 确保body也隐藏滚动条 */
+  overflow-x: hidden; /* 隐藏水平滚动条 */
 }
+
 .foot{
   color: hsla(0, 0%, 0%, 0.8);
   margin-left: 10px;
-
 }
+
 .foot:hover{
   color: rgb(51, 226, 51);
 }
+
 .foot-contain{
   margin-right: 20px;
 }
+
 .button{
   border-radius: 10px;
   margin-left: 10px;
   background-color: rgb(23, 23, 23);
-  width: 55px;
-  height: 42px;
+  width: 15%;
+
   color: #ffffff;
   font-weight: bold;
 }
@@ -50,11 +93,14 @@ body {
   background-color: rgb(53, 53, 53);
 }
 
-
 input{
   border-radius: 10px;
   border:royalblue 3px solid;
   color: #0a0a0a;
   font-size: medium;
   padding: 0 0 0 10px;
+  width: 60%;
+}
+.nav-bar{
+  padding-top: 20px;
 }

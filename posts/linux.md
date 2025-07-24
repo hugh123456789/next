@@ -2,7 +2,7 @@
 title: 'Linux'
 description: ''
 date: 2025-07-19 10:00:00
-
+image: './image/8.jpg'
 ---
 
 **一、文件和目录操作**

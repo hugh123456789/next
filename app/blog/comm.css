@@ -12,3 +12,7 @@
     /* 对于 IE 和 Edge (旧版) */
     -ms-overflow-style: none;
   }
+
+.md-contain:hover {
+    color:black;
+  }

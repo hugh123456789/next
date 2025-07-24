@@ -2,7 +2,7 @@
 title: 'Docker'
 description: ''
 date: 2025-07-19 10:00:00
-
+image: './image/10.jpg'
 ---
 
 ## 卸载旧版

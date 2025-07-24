@@ -47,13 +47,16 @@ export default function RootLayout({ children }) {
                 </SignedIn>
               </div>
             </div>
+            <div style={{width:'90vw',margin:'0 auto'}}>
+              <NavBar/>
+            </div>
             
             <div className="custom-scrollbar flex  justify-center items-center flex-col" style={{width:'90vw',margin:'0 auto'}}>
              
              {children}
               
             </div>
-            <div className='pt-4 bg-white w-[80vw] ' style={{margin:'0 auto'}}>
+            <div className='pt-4 bg-white ' style={{margin:'0 auto',width:'90vw'}}>
               <hr style={{marginBottom:'3vh'}}/>
               <Footer style={{ marginTop: '9vh' }}/>
             </div>

@@ -8,7 +8,8 @@ export default function Footer() {
             <div className="flex justify-center items-center">
                 <div className="flex justify-center items-center max-w-screen-xl w-[70vw]">
                     <div>
-                        <div style={{ width: '30vw', margin: '0 auto' }} className=" rounded-2xl p-4 bg-white shadow-md 
+                        <div style={{ width: '30vw', margin: '0 auto' ,height:'30vh'}} className=" rounded-2xl p-4 bg-white shadow-md 
+
                      border border-gray-200 hover:shadow-lg transition-shadow duration-300">
                             <div className="flex">
                                 <LiaAirbnb className="text-2xl " style={{color:'black'}} />
@@ -16,7 +17,7 @@ export default function Footer() {
                             </div>
                             <div>喜欢我的内容的话不妨订阅支持一下</div>
                             <div>xxxx</div>
-                            <div className="flex" style={{marginTop:'20px'}}>
+                            <div className="flex justify-between" style={{marginTop:'20px'}}>
                                 <input/>
                                 <button className="button">订阅</button>
                             </div>

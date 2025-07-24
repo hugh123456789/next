@@ -1,6 +1,8 @@
 // app/posts/[id]/page.js
+import Link from 'next/link';
 import { getAllPostIds, getPostData } from '../../../lib/posts';
 import './comm.css'
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 export async function generateStaticParams() {
   const paths = getAllPostIds();
@@ -9,8 +11,16 @@ export async function generateStaticParams() {
 
 // 大纲组件
 function TableOfContents({ headings }) {
+  console.log('TableOfContents received headings:', headings); // 调试信息
+  
   if (!headings || headings.length === 0) {
-    return null;
+    console.log('No headings found or empty headings array'); // 调试信息
+    return (
+      <div className="toc-container">
+        <h3 className="toc-title">目录</h3>
+        <p style={{fontSize: '0.8rem', color: '#999'}}>暂无目录</p>
+      </div>
+    );
   }
 
   return (
@@ -36,6 +46,12 @@ export default async function Post({ params }) {
 
   return (
     <div className="post-layout">
+      <div className='back-button'>
+        <Link href='/blog'>
+          <BsArrowReturnLeft>x</BsArrowReturnLeft>
+         
+        </Link>
+      </div>
       {/* 左侧大纲 */}
       <aside className="post-sidebar">
         <TableOfContents headings={postData.headings} />

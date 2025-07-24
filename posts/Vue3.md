@@ -2,7 +2,8 @@
 title: '尚硅谷vue3'
 description: 'this is a vue3 '
 date: 2025-07-19 10:00:00
-
+image: './image/2.jpg'
+type : '前端'
 ---
 
 # 1. Vue3简介

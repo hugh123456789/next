@@ -5,7 +5,7 @@ export default function blogLayout({ children }) {
     return (
 
         <div className="bg-white">
-            <NavBar />
+            {/* <NavBar /> */}
             <div>{children}</div>
 
         </div>
