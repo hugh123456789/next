@@ -43,7 +43,6 @@
 html {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
-  
 }
 
 /* 确保所有元素都隐藏滚动条 */
@@ -71,10 +70,6 @@ body {
   margin-left: 10px;
 }
 
-.foot:hover{
-  color: rgb(51, 226, 51);
-}
-
 .foot-contain{
   margin-right: 20px;
 }
@@ -84,7 +79,6 @@ body {
   margin-left: 10px;
   background-color: rgb(23, 23, 23);
   width: 15%;
-
   color: #ffffff;
   font-weight: bold;
 }
@@ -101,6 +95,45 @@ input{
   padding: 0 0 0 10px;
   width: 60%;
 }
+
+/* 导航栏样式优化 */
 .nav-bar{
   padding-top: 20px;
+}
+
+/* 移动端导航栏优化 */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding-top: 10px;
+  }
+}
+
+.border-bottom:hover{
+  border-bottom: 2px solid black;
+}
+
+.border-bottom{
+  transition: border-bottom 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+/* 移动端触摸优化 */
+@media (max-width: 768px) {
+  /* 增加触摸目标大小 */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 优化文字大小 */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+/* 防止移动端缩放 */
+@viewport {
+  width: device-width;
+  zoom: 1.0;
 }

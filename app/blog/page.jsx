@@ -12,13 +12,16 @@ export default function blogPage() {
     <div className='bg-[#ffffff] custom-scrollbar min-h-screen relative mt-[5vh]'>
       <div className='flex flex-col custom-scrollbar  overflow-y-auto p-15 pt-[10vh] pb-[5vh] relative z-10'>
         <div className='flex-1 '>
-          <div className='text-4xl font-bold tracking-tight text-black  sm:text-5xl' style={{ margin: '0 auto' }} >欢迎!</div>
-          <div className='mt-[5vh] w-1/2 text-black'>
+          <div className='animate-spring-in'>
+            {/* 这里可以添加你想要的内容 */}
+          </div>
+          <div className='text-4xl font-bold tracking-tight text-black  sm:text-5xl animate-fade-in-up' style={{ margin: '0 auto' }} >欢迎!</div>
+          <div className='mt-[5vh] w-1/2 text-black animate-fade-in-up-small'>
             写博客文章是我比较喜欢的沉淀分享方式，
             我希望能够把好用的技术知识传递给更多的人。我比较喜欢围绕着技术为主的话题，但是也会写一些非技术的话题，比如设计、创业、企业管理、生活随笔等等。
           </div>
-          <div className='mt-[5vh]'><GiAlliedStar className='text-3xl text-yellow-400'></GiAlliedStar></div>
-          <div className='flex flex-wrap justify-center gap-6 mt-[10vh] mb-8'>
+          <div className='mt-[5vh] animate-fade-in-up-tiny'><GiAlliedStar className='text-3xl text-yellow-400'></GiAlliedStar></div>
+          <div className='flex flex-wrap justify-center gap-6 mt-[10vh] mb-8 animate-fade-in-up-tiny'>
             {allPostsData.map(({ id, date, title, image, type }) => (
               <Link href={`/posts/${id}`} key={id} className='md-contain'>
                 <div
