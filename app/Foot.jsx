@@ -6,52 +6,70 @@ import { FaRegShareFromSquare } from "react-icons/fa6";
 
 export default function Footer() {
     return (
-        <div>
-            <div className="flex justify-center items-center">
-                <div className="flex justify-center items-center max-w-screen-xl w-[70vw]">
-                    <div>
-                        <div style={{ width: '30vw', margin: '0 auto', height: '30vh' }} className=" rounded-2xl p-4 bg-white shadow-md 
-
-                     border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                            <div className="flex">
-                                <LiaAirbnb className="text-2xl " style={{ color: 'black' }} />
-                                <span style={{ color: 'black', marginLeft: '10px', textAlign: 'center', fontWeight: 'bold' }}>动态更新</span>
-                            </div>
-                            <div>喜欢我的内容的话不妨订阅支持一下</div>
-                            <div>xxxx</div>
-                            <div className="flex justify-between" style={{ marginTop: '20px' }}>
-                                <input />
-                                <button className="button">订阅</button>
-                            </div>
+        <footer className="w-full bg-white border-t border-gray-200">
+            {/* 订阅区域 - 移动端优化 */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="max-w-md mx-auto text-center">
+                    <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                        <div className="flex items-center  mb-4">
+                            <LiaAirbnb className="text-2xl text-black" />
+                            <h3 className="ml-3 text-lg font-bold text-black">动态更新</h3>
+                        </div>
+                        <p className="text-gray-600 mb-4 text-sm sm:text-base">
+                            喜欢我的内容的话不妨订阅支持一下
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-3 items-center">
+                            <input 
+                                type="email" 
+                                placeholder="输入您的邮箱"
+                                className="w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm text-center sm:text-left"
+                            />
+                            <button className="w-full sm:w-auto px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                                订阅
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style={{ marginTop: '9vh' }} className="flex justify-between items-center py-4 ">
 
-                <div className="flex justify-center items-center">
-                    <span style={{ color: 'hsla(240,4%,46%,.8)', textAlign: 'center' }} >© 2025</span>
-                    <span style={{ fontSize: '13px', marginLeft: '3px', color: 'hsla(240,4%,46%,.8)' }}>项目已开源，欢迎star
-                    </span>
-                    <Link href="https://github.com/hugh123456789/next" style={{ display: 'flex', flexDirection: 'row' }}>
-                          <FaGithub className="" style={{marginLeft: '5px',color:'black'}}  />
-                         <div className="border-bottom" style={{ fontSize: '13px', marginLeft: '3px', color: 'black', }}>Github</div>
-                      <FaRegShareFromSquare className="text-black" style={{marginLeft: '3px'}} />
-                    </Link>
+            {/* 底部导航和版权 */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="py-8 border-t border-gray-100">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                        {/* 左侧版权信息 */}
+                        <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 text-center sm:text-left">
+                            <span className="text-gray-500 text-sm"> 2025</span>
+                            <span className="text-gray-500 text-sm">项目已开源，欢迎star</span>
+                            <Link 
+                                href="https://github.com/hugh123456789/next" 
+                                className="flex items-center gap-1 text-black hover:text-gray-600 transition-colors"
+                            >
+                                <FaGithub className="text-sm" />
+                                <span className="text-sm border-b border-transparent hover:border-black transition-colors">
+                                    Github
+                                </span>
+                                <FaRegShareFromSquare className="text-sm" />
+                            </Link>
+                        </div>
 
-                </div>
-
-
-
-                <div className="gap-4 foot-contain hover:text-lime-500">
-                    <Link href="/" style={{ marginRight: '10px' }} className="foot">首页</Link>
-                    <Link href="/blog" className="foot">博客</Link>
-                    <Link href="/contact" className="foot">联系</Link>
-                    <Link href="/about" className="foot">关于</Link>
-
+                        {/* 右侧导航链接 */}
+                        <nav className="flex flex-wrap justify-center gap-4 sm:gap-6">
+                            <Link href="/" className="text-sm text-gray-600 hover:text-black transition-colors">
+                                首页
+                            </Link>
+                            <Link href="/blog" className="text-sm text-gray-600 hover:text-black transition-colors">
+                                博客
+                            </Link>
+                            <Link href="/contact" className="text-sm text-gray-600 hover:text-black transition-colors">
+                                联系
+                            </Link>
+                            <Link href="/about" className="text-sm text-gray-600 hover:text-black transition-colors">
+                                关于
+                            </Link>
+                        </nav>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </footer>
     );
 }

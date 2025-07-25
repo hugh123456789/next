@@ -9,7 +9,7 @@ export default function blogPage() {
   const allPostsData = getSortedPostsData();
 
   return (
-    <div className='bg-[#ffffff] custom-scrollbar min-h-screen relative mt-[5vh]'>
+    <div className='bg-[#ffffff] custom-scrollbar min-h-screen relative pt-[2vh]'>
       <div className='flex flex-col custom-scrollbar  overflow-y-auto p-15 pt-[10vh] pb-[5vh] relative z-10'>
         <div className='flex-1 '>
           <div className='animate-spring-in'>

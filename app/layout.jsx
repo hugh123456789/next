@@ -47,21 +47,21 @@ export default function RootLayout({ children }) {
               </SignedIn>
             </div>
             
-            {/* 导航栏容器 - 响应式宽度 */}
-            <div className="w-full px-4 md:w-[90vw] md:mx-auto">
-              <NavBar/>
-            </div>
+            {/* 导航栏 */}
+            <NavBar/>
             
-            {/* 主内容区域 - 响应式布局 */}
-            <div className="custom-scrollbar flex justify-center items-center flex-col w-full px-4 md:w-[90vw] md:mx-auto">
+            {/* 主内容区域 */}
+            <main className="flex-1 w-full px-4 md:w-[90vw] md:mx-auto">
               {children}
-            </div>
+            </main>
             
-            {/* 页脚 - 响应式布局 */}
-            <div className='pt-4 bg-white w-full px-4 md:w-[90vw] md:mx-auto'>
-              <hr className="mb-6"/>
-              <Footer className="mt-16"/>
-            </div>
+            {/* 页脚 */}
+            <footer className='w-full px-4 md:w-[90vw] md:mx-auto'>
+              <div className="pt-4 bg-white">
+                <hr className="mb-6"/>
+                <Footer/>
+              </div>
+            </footer>
           </div>
         </body>
       </html>

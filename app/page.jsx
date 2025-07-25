@@ -48,67 +48,76 @@ function Founder() {
 export default function rootPage() {
   
     return (
-        <div style={{ color: 'black', minWidth: '90vw', height: '100vh', backgroundColor: 'white'}}>
-            <div className="max-w-2xl" style={{marginTop:'10vh',marginLeft:'5vw'}}>
-                <motion.h1
-                    className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-900 sm:text-5xl"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        damping: 25,
-                        stiffness: 100,
-                        duration: 0.3,
-                    }}
-                >
-                    <Developer style={{color:'black'}} />，<Designer />，
-                    <span className="block h-2" />
-                    <OCD />，<Founder />
-
-                </motion.h1>
-                <motion.p
-                    className="mt-6 text-base text-zinc-600 dark:text-zinc-400"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        damping: 30,
-                        stiffness: 85,
-                        duration: 0.3,
-                        delay: 0.1,
-                    }}
-                >
-
-                </motion.p>
-                <motion.div
-                    className="mt-6 flex gap-6"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        damping: 50,
-                        stiffness: 90,
-                        duration: 0.35,
-                        delay: 0.25,
-                    }}
-                >
-
-                </motion.div>
+        <div className="min-h-screen w-full bg-white dark:bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="min-h-screen flex items-center justify-center">
+                    <div className="text-center sm:text-left">
+                        <motion.h1
+                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-900 leading-tight"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                type: 'spring',
+                                damping: 25,
+                                stiffness: 100,
+                                duration: 0.3,
+                            }}
+                        >
+                            <div className="space-y-2 sm:space-y-0">
+                                <span className="block sm:inline">
+                                    <Developer className="text-zinc-900" />，
+                                </span>
+                                <span className="block sm:inline mt-2 sm:mt-0">
+                                    <Designer />
+                                </span>
+                            </div>
+                            <div className="mt-4">
+                                <span className="block sm:inline">
+                                    <OCD />，
+                                </span>
+                                <span className="block sm:inline mt-2 sm:mt-0">
+                                    <Founder />
+                                </span>
+                            </div>
+                        </motion.h1>
+                        
+                        <motion.p
+                            className="mt-6 text-lg sm:text-xl text-zinc-600 dark:text-zinc-500 max-w-2xl"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                type: 'spring',
+                                damping: 30,
+                                stiffness: 85,
+                                duration: 0.3,
+                                delay: 0.1,
+                            }}
+                        >
+                            专注于创造优雅的用户体验，将技术与设计完美融合
+                        </motion.p>
+                        
+                        <motion.div
+                            className="mt-8 flex flex-col sm:flex-row gap-4 justify-center sm:justify-start"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                type: 'spring',
+                                damping: 50,
+                                stiffness: 90,
+                                duration: 0.35,
+                                delay: 0.25,
+                            }}
+                        >
+                            <button className="px-6 py-3 bg-zinc-900 text-white rounded-lg hover:bg-zinc-800 transition-colors">
+                                查看作品
+                            </button>
+                            <button className="px-6 py-3 border border-zinc-300 text-zinc-900 rounded-lg hover:bg-zinc-50 transition-colors">
+                                联系我
+                            </button>
+                        </motion.div>
+                    </div>
+                </div>
             </div>
-           <motion.div
-                    className="mt-6 flex gap-6"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: 'spring',
-                        damping: 50,
-                        stiffness: 90,
-                        duration: 0.35,
-                        delay: 0.25,
-                    }}
-                >
-xxx
-                </motion.div>
         </div>
     )
 }

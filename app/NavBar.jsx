@@ -31,7 +31,7 @@ export const NavBar = () => {
     }
 
     return (
-        <div className="flex justify-center bg-white nav-bar relative">
+        <div className="flex justify-center bg-white nav-bar relative px-4" style={{width:'90vw',margin:'0 auto'}}>
             {/* 桌面端导航栏 */}
             <nav
                 className={classNames(
@@ -61,10 +61,11 @@ export const NavBar = () => {
             {/* 移动端导航栏 */}
             <div className="md:hidden w-full">
                 {/* 移动端顶部栏 */}
-                <div className="flex justify-between items-center px-4 py-3 bg-white border-b border-gray-200">
-                    <div className="text-xl font-bold text-[#0095ff]">
+                <div className="flex justify-between items-center h-[8vh] px-4">
+                    {/* Logo或品牌名 */}
+                    <Link href="/" className="text-xl font-bold text-[#0095ff]">
                         Blog
-                    </div>
+                    </Link>
                     
                     {/* 汉堡菜单按钮 */}
                     <button
@@ -89,43 +90,35 @@ export const NavBar = () => {
                     </button>
                 </div>
 
-                {/* 移动端菜单 */}
+                {/* 移动端下拉菜单 */}
                 <div className={classNames(
-                    'absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-lg transition-all duration-300 ease-in-out z-40',
+                    'absolute top-[8vh] left-0 w-full bg-white border-t border-gray-200 shadow-lg transition-all duration-300 ease-in-out z-50',
                     {
                         'opacity-100 visible translate-y-0': isMobileMenuOpen,
                         'opacity-0 invisible -translate-y-2': !isMobileMenuOpen
                     }
                 )}>
-                    <nav className="py-2">
+                    <nav className="py-4">
                         {list.map(item => (
                             <Link
                                 key={item.href}
                                 href={item.href}
                                 onClick={closeMobileMenu}
                                 className={classNames(
-                                    'flex items-center px-6 py-3 text-base font-medium transition-colors duration-200',
+                                    'flex items-center px-6 py-3 text-lg font-medium transition-colors duration-200',
                                     {
                                         'bg-[#0095ff] text-white': path === item.href,
                                         'text-gray-700 hover:bg-gray-50 hover:text-[#0095ff]': path !== item.href
                                     }
                                 )}
                             >
-                                <span className="mr-3 text-lg">{item.icon}</span>
-                                {item.title}
+                                <span className="mr-3 text-xl">{item.icon}</span>
+                                <span>{item.title}</span>
                             </Link>
                         ))}
                     </nav>
                 </div>
             </div>
-
-            {/* 移动端菜单遮罩层 */}
-            {isMobileMenuOpen && (
-                <div 
-                    className="md:hidden fixed inset-0 bg-black bg-opacity-25 z-30"
-                    onClick={closeMobileMenu}
-                ></div>
-            )}
         </div>
     )
 }
