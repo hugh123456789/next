@@ -152,7 +152,7 @@ input{
   /* 移动端间距优化 */
   .min-h-screen {
     padding-top: 0;
-    padding-bottom: 2rem;
+    padding-bottom: 0;
   }
   
   /* 移动端按钮样式 */

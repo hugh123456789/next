@@ -11,7 +11,10 @@ export async function generateStaticParams() {
 
 // 大纲组件
 function TableOfContents({ headings }) {
+  console.log('TableOfContents received headings:', headings); // 调试信息
+  
   if (!headings || headings.length === 0) {
+    console.log('No headings found or empty headings array'); // 调试信息
     return (
       <div className="toc-container">
         <h3 className="toc-title">目录</h3>
@@ -40,15 +43,13 @@ function TableOfContents({ headings }) {
 
 export default async function Post({ params }) {
   const postData = await getPostData(params.id);
-  
-  // 安全地处理日期
-  const formattedDate = postData.date ? new Date(postData.date).toLocaleDateString('zh-CN') : '未知日期';
 
   return (
     <div className="post-layout">
       <div className='back-button'>
         <Link href='/blog'>
           <BsArrowReturnLeft>x</BsArrowReturnLeft>
+         
         </Link>
       </div>
       {/* 左侧大纲 */}
@@ -61,7 +62,8 @@ export default async function Post({ params }) {
         <div className='post-container'>
           <h1>{postData.title}</h1>
           <div className='post-meta'>
-            <span>{formattedDate}</span>
+            <span>{postData.date.toDateString()}</span>
+            {/* 若有阅读时长等其他元信息，也可放这里 */}
           </div>
           <div
             className='post-content'

@@ -4,13 +4,16 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import classNames from 'classnames'
+import { TbHome } from "react-icons/tb";
+import { HiCollection } from "react-icons/hi";
+import { SiNounproject } from "react-icons/si";
 
 const list = [
-    { href: "/", title: "Home", icon: "🏠" },
-    { href: "/blog", title: "Blog", icon: "📝" },
-    { href: "/projects", title: "Projects", icon: "💼" },
-    { href: "/about", title: "About", icon: "👤" },
-    { href: "/comment", title: "Comment", icon: "💬" },
+    { href: "/", title: "主页", icon: <TbHome></TbHome> },
+    { href: "/blog", title: "博客", icon: <HiCollection></HiCollection> },
+    { href: "/projects", title: "项目", icon: <SiNounproject></SiNounproject> },
+    { href: "/about", title: "关于", icon: "👤" },
+    { href: "/comment", title: "留言板", icon: "💬" },
 ]
 
 export const NavBar = () => {
@@ -61,16 +64,16 @@ export const NavBar = () => {
             {/* 移动端导航栏 */}
             <div className="md:hidden w-full">
                 {/* 移动端顶部栏 */}
-                <div className="flex justify-between items-center h-[8vh] px-4">
+                <div className="flex justify-between items-center h-[8vh] px-0">
                     {/* Logo或品牌名 */}
-                    <Link href="/" className="text-xl font-bold text-[#0095ff]">
+                    {/* <Link href="/" className="text-xl font-bold text-[#0095ff]">
                         Blog
-                    </Link>
+                    </Link> */}
                     
                     {/* 汉堡菜单按钮 */}
                     <button
                         onClick={toggleMobileMenu}
-                        className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                        className="p-0 rounded-lg hover:bg-gray-100 transition-colors duration-200"
                         aria-label="切换菜单"
                     >
                         <div className="w-6 h-6 flex flex-col justify-center items-center">

@@ -6,7 +6,7 @@ import {SparkleIcon ,UserSecurityIcon} from '../assets/SparkleIcon'
 function Developer() {
     return (
         <span className="group">
-            <span className="font-mono">&lt;</span>开发者
+            <span className="font-mono">&lt;</span>软件开发
             <span className="font-mono">/&gt;</span>
             <span className="invisible inline-flex text-zinc-300 before:content-['|'] group-hover:visible group-hover:animate-typing dark:text-zinc-500" />
         </span>
