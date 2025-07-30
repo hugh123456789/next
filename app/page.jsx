@@ -40,7 +40,7 @@ function Founder() {
     return (
         <span className="group inline-flex items-center">
             <UserSecurityIcon className="mr-1 inline-flex group-hover:fill-zinc-600/20 dark:group-hover:fill-zinc-200/20" />
-            <span> s m : ) e</span>
+            <span>sm:)e</span>
         </span>
     )
 }

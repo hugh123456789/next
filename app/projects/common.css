@@ -1,0 +1,31 @@
+.answer-container{
+    border:2px solid #dedede;
+    border-radius: 17px;
+    height: 20vh;
+    margin:0 auto;
+    background-color: white;
+
+    transition: all;
+    transition-duration: 0.3s
+}
+.answer-container:hover{
+    box-shadow: 3px 3px 15px gray;
+    
+}
+.send-button{
+    border:1px solid black;
+    padding: 4px;
+    border-radius: 3px;
+    margin-right: 10px;
+    background-color: black;
+    color:white
+}
+.hover-button{
+    transition-duration: 0.2s;
+     
+}
+.question{
+    width: 90vw;
+    margin: 0 auto;
+    height: 70vh;
+}

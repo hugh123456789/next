@@ -1,10 +1,52 @@
+'use client'
 import Link from "next/link";
 
 import { LiaAirbnb } from "react-icons/lia";
 import { FaGithub } from "react-icons/fa";
 import { FaRegShareFromSquare } from "react-icons/fa6";
+import { useState } from "react";
+import { useModal } from './hooks/useModal'; // 添加导入自定义hook
+
+import { GrValidate } from "react-icons/gr";
 
 export default function Footer() {
+    const [email, setEmail] = useState("");
+    const { isOpen, message, title, showModal, closeModal } = useModal(); // 使用自定义hook
+    
+    const handleSubscribe = async () => {
+        if (!email) {
+            showModal("请输入邮箱地址");
+            return;
+        }
+        
+        try {
+            const response = await fetch('/api/email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    type: 'welcome',
+                    to: email
+                })
+            });
+            
+            const result = await response.json();
+            
+            if (response.ok) {
+                showModal("订阅成功！感谢您的订阅", "成功");
+                setEmail(""); // 清空输入框
+            } else {
+                showModal("订阅失败：" + result.message, "失败");
+            }
+        } catch (error) {
+            console.error("订阅出错:", error);
+            showModal("订阅过程中出现错误，请稍后再试", "错误");
+        }
+    };
+    const onChange = (e) => {
+        setEmail(e.target.value);
+    };
     return (
         <footer className="w-full bg-white ">
             {/* 订阅区域 - 移动端优化 */}
@@ -19,12 +61,14 @@ export default function Footer() {
                             喜欢我的内容的话不妨订阅支持一下
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 items-center">
-                            <input 
+                            <input value={email} onChange={onChange}
                                 type="email" 
                                 placeholder="输入您的邮箱"
                                 className="w-full sm:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm text-center sm:text-left"
                             />
-                            <button className="w-full sm:w-auto px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm">
+                            <button className="w-full sm:w-auto px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors text-sm"
+                            onClick={()=>handleSubscribe()}
+                            >
                                 订阅
                             </button>
                         </div>
@@ -38,6 +82,7 @@ export default function Footer() {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                         {/* 左侧版权信息 */}
                         <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 text-center sm:text-left">
+                            <GrValidate className="text-black"/>
                             <span className="text-gray-500 text-sm"> 2025</span>
                             <span className="text-gray-500 text-sm">项目已开源，欢迎star</span>
                             <Link 
@@ -70,6 +115,24 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
+
+            {/* 自定义弹窗 */}
+            {isOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+                        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                        <p className="text-gray-600 mb-4">{message}</p>
+                        <div className="flex justify-end">
+                            <button
+                                onClick={closeModal}
+                                className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                            >
+                                确定
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </footer>
     );
 }

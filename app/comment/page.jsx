@@ -1,10 +1,10 @@
 
 
-export default function contactPage(){
-    return (
-          <div className="mt-16 sm:mt-32">
+export default function contactPage() {
+  return (
+    <div className="p-16 bg-white w-full h-full">
       <header className="max-w-2xl">
-        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tight text-black dark:text-black sm:text-5xl">
           欢迎来到我的留言墙
         </h1>
         <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
@@ -15,5 +15,5 @@ export default function contactPage(){
         {/* <Guestbook messages={messages} /> */}
       </div>
     </div>
-    )
+  )
 }

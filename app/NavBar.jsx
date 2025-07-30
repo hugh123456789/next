@@ -7,13 +7,15 @@ import classNames from 'classnames'
 import { TbHome } from "react-icons/tb";
 import { HiCollection } from "react-icons/hi";
 import { SiNounproject } from "react-icons/si";
+import { GiAirMan } from "react-icons/gi";
+import { GiBeech } from "react-icons/gi";
 
 const list = [
     { href: "/", title: "主页", icon: <TbHome></TbHome> },
     { href: "/blog", title: "博客", icon: <HiCollection></HiCollection> },
     { href: "/projects", title: "项目", icon: <SiNounproject></SiNounproject> },
-    { href: "/about", title: "关于", icon: "👤" },
-    { href: "/comment", title: "留言板", icon: "💬" },
+    { href: "/about", title: "关于", icon: <GiAirMan/> },
+    { href: "/comment", title: "留言板", icon: <GiBeech/> },
 ]
 
 export const NavBar = () => {
