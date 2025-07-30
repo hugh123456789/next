@@ -1,7 +1,7 @@
 ---
 title: 'Redis'
 description: ''
-date: 2025-07-19 10:00:00
+date: '2025-07-19'
 image: './image/14.jpg'
 ---
 # redis
